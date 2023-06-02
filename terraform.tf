@@ -1,6 +1,6 @@
 terraform {
   required_providers {
-    azuread = {
+    nsxt = {
       source  = "vmware/nsxt"
       version = ">= 3.3.1"
     }
