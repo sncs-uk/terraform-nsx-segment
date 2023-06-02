@@ -1,3 +1,11 @@
+terraform {
+  required_providers {
+    azuread = {
+      source  = "vmware/nsxt"
+      version = ">= 3.3.1"
+    }
+  }
+}
 
 resource "nsxt_policy_tier1_gateway" "tier1_gw" {
   description               = "${var.segment_name} router"
