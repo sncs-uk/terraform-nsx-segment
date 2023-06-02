@@ -7,22 +7,22 @@ variable "segment_description" {
   description = "A description of the segment."
   default     = ""
 }
-variable "edge_cluster_path" {
+variable "edge_cluster_name" {
   type        = string
-  description = "Path to the edge cluster on which to place the tier 1 router"
+  description = "Name of the edge cluster on which to place the tier 1 router"
 }
-variable "tier0_path" {
+variable "tier0_gateway_name" {
   type        = string
-  description = "Path to the tier 0 router to which to connect the tier 1 router"
+  description = "The name of the tier 0 gateway to which to connect the tier 1 gateway."
+}
+variable "transport_zone_name" {
+  type        = string
+  description = "Name of the transport zone in which to create the segment."
 }
 variable "route_advertisement_types" {
   type        = list(string)
   description = "Enable different types of route advertisements: TIER1_STATIC_ROUTES, TIER1_CONNECTED, TIER1_NAT, TIER1_LB_VIP, TIER1_LB_SNAT, TIER1_DNS_FORWARDER_IP, TIER1_IPSEC_LOCAL_ENDPOINT."
   default     = ["TIER1_STATIC_ROUTES", "TIER1_CONNECTED"]
-}
-variable "transport_zone_path" {
-  type        = string
-  description = "Path to the transport zone in which to create the segment."
 }
 variable "subnets" {
   type        = list(string)

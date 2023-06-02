@@ -9,10 +9,10 @@ module "segment" {
   source                    = "github.com/sncs-uk/terraform-nsx-segment"
   segment_name              = "my-segment"
   segment_description       = "Terraform provisioned Segment"
-  edge_cluster_path         = data.nsxt_policy_edge_cluster.EC.path
-  tier0_path                = data.nsxt_policy_tier0_gateway.T0.path
+  edge_cluster_name         = "edge-cluster-1"
+  tier0_gateway_name        = "tier-0-1"
+  transport_zone_name       = "overlay-zone"
   route_advertisement_types = ["TIER1_STATIC_ROUTES", "TIER1_CONNECTED"]
-  transport_zone_path       = data.nsxt_policy_transport_zone.tz.path
   subnets                   = ["10.20.30.0/24", "2001:db8::/64"]
   failover_mode             = "PREEMPTIVE"
   enable_firewall           = "true"
